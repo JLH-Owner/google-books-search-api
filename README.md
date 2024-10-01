@@ -1,7 +1,7 @@
 # Google Books Search Engine API
 
 ## Summary
-A search engine designed to allow users to search for books and save them for later purchase. The application initially used a RESTful API, but is converted to a GraphQL API.
+A search engine designed to allow a user to search for books to read and save them for later purchase. The application was initially built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It was refactored to be a GraphQL API built with Apollo Server.
 
 ## Table of Contents
 - [Description](#description)
