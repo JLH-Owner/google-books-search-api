@@ -6,9 +6,9 @@ const resolvers = {
         users: async () => {
             return User.find();
         },
-
-        user: async (parent, { username }) => {
-            return User.findOne({ username });
+ 
+        user: async (parent, { userId }) => {
+            return User.findOne({ _id: userId });
         },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
         me: async (parent, args, context) => {
@@ -32,7 +32,7 @@ const resolvers = {
 
             if (!user) {
                 throw AuthenticationError;
-                ('Login failed, user not found!')
+                ('User not found!')
             }
 
             const correctPw = await user.isCorrectPassword(password);
@@ -72,7 +72,7 @@ const resolvers = {
             ('User not found!')
             },
         // Make it so a logged in user can only remove a skill from their own user
-        removeBook: async (parent, { book }, context) => {
+        removeBook: async (parent, { book_id }, context) => {
             if (context.user) {
                 return User.findOneAndUpdate(
                     { _id: context.user._id },

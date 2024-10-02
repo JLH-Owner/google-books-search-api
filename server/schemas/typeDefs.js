@@ -13,19 +13,19 @@ const typeDefs = `#graphql
         authors: [String]!
         description: String
         title: String
-        image: Float
+        image: String
         link: String
     }
         
     type Auth {
         token: ID!
-        user: [User]!
+        user: User
     }
         
     type Query {
         users: [User]!
-        user(username: String!): User
-        # Because we have the context functionality in place to check a JWT and decode its data,
+        user(userId: ID!): User
+        # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
         me: User
     }
         
