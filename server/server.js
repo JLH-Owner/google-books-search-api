@@ -12,6 +12,10 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  formatError(err) {
+    console.log(err);
+    return err;
+  }
 });
 
 // create a new instance of an Apollo server with the GraphQL schema

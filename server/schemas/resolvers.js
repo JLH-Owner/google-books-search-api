@@ -13,7 +13,7 @@ const resolvers = {
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user_id }).populate('books');
+                return User.findOne({ _id: context.user_id })
             }
             throw AuthenticationError;
             ('User not found!')
@@ -46,10 +46,10 @@ const resolvers = {
             return { token, user };
         },
         // Add a third argument to the resolver to access data in our `context`
-        saveBook: async (parent, { userId, bookId }, context) => {
-            if (!context.user) {
+        saveBook: async (parent, { bookId }, context) => {
+            if (context.user) {
                 return User.findOneAndUpdate(
-                    { _id: userId },
+                    { _id: context.user._id },
                     {
                         $addToSet: { books: bookId }, 
                     },
@@ -72,7 +72,7 @@ const resolvers = {
             ('User not found!')
             },
         // Make it so a logged in user can only remove a skill from their own user
-        removeBook: async (parent, { book_id }, context) => {
+        removeBook: async (parent, { bookId }, context) => {
             if (context.user) {
                 return User.findOneAndUpdate(
                     { _id: context.user._id },

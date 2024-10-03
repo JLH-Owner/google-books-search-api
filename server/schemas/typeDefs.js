@@ -32,7 +32,7 @@ const typeDefs = `#graphql
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth        
-        saveBook(userId: ID!, bookId: ID!): User
+        saveBook(bookId: ID!): User
         removeUser: User
         removeBook(bookId: ID!): User
     }
