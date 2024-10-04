@@ -60,9 +60,11 @@ A search engine designed to allow a user to search for books to read and save th
     
     - THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button  
 
-## Installation
+## Installation 
+Execute npm install to install all necessary packages and dependencies.
 
 ## Usage
+Deploy site using [Link](#links) below. Signup, Search for books, save the books you would like, then view saved books. If needed, you have the option to delete the book from your saved list.
 
 ## Author
 ### Stacy Herbert
@@ -71,8 +73,18 @@ A search engine designed to allow a user to search for books to read and save th
 The initial code was given by the instructor as a RESTful API application using the Vite + React technologies. 
 
 ## Images
+<img src="assets\images\signup.png">
+<img src="assets\images\signup-added-user-mongodb.png">
+<img src="assets\images\login.png">
+<img src="assets\images\apollo-server.png">
+<img src="assets\images\search-results.png">
+<img src="assets\images\save-book.png">
 
 ## LINKS
 ### GitHub Repository: 
 
+https://github.com/JLH-Owner/google-books-search-api
+
 ### Live Deploy on Render:
+
+https://google-books-search-api.onrender.com

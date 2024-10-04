@@ -72,9 +72,11 @@ const handleFormSubmit = async (event) => {
       // if book successfully saves to user's account, save book id to state
       if (data) {
         setSavedBookIds([...savedBookIds, bookId]);
+        alert("Book saved successfuly!");
       }
     } catch (err) {
       console.error(err);
+      alert("Failed to save the book. Plase try again.");
     }
   };
   
